@@ -1,0 +1,1077 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* makes it scroll nicely when jumping to parts on the page */
+
+h1, h2, h3, h4, h5, h6, span {
+    color: #242424;
+    text-align: center;
+    line-height: 1.25;
+}
+
+h1{
+    font-size: 36px;
+}
+
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    position: relative;
+
+}
+
+/* This is for the fancy underline hover effect, this is its parent so it needs position relative 
+
+*/
+
+i{
+    transition: opacity 300ms ease;
+}
+
+/*we make the transition for opacity in the code below so it's beautiful*/
+
+
+i:hover{
+    opacity: .7;
+}
+
+/* This makes the clickable things a bit transparent so you know their clickable */
+
+li{
+    list-style-type: none;
+}
+
+.flex1{
+flex: 1;
+}
+
+/* This lets the first section take up whte whole 100vh height so it will grow or shrink to accomodate */
+
+
+.flex{
+    display: flex;
+}
+
+/* Idk he said that the child will also take up the full height */
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+/* This centers the whole document  and adds some padding so that in mobile view it doesnt touch the sides*/
+
+
+section:nth-child(even){
+    background-color: #f8f8f8;
+}
+
+/* Every second section has a different background color */
+
+
+.container{
+    padding: 50px 0;
+}
+/*
+This adds top and botom padding to containers */
+
+.section__title{
+    margin-bottom: 20px;
+}
+/*
+This adds margin to the bottom of titles */
+
+
+
+
+
+
+
+
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+
+
+
+    height:3px;
+    background-color: black;
+    width: 0%;
+    bottom:  -3px;
+    Right: 0;
+    transition: all 300ms ease;
+
+}
+
+/* This adds the underline to links with this class, makes the position absolute so it doesnt change the height. The rest is for the animation t make it scroll from left to right */
+
+.link__hover-effect:hover:after{
+
+    width: 100%;
+    left: 0;
+
+}
+
+/* Makes the underline take up the whole word and also helps the animation */
+
+.link__hover-effect--white:after{
+    background-color: white;
+
+}
+
+.link__hover-effect--black:after{
+    background-color: black;
+
+}
+
+/* puts the proper underline to the color of the text */
+
+
+/*
+
+
+
+
+
+
+
+NAVIGATION BAR
+
+
+
+
+
+*/
+
+nav{
+    height: 100px;
+    width:100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
+/* In this section we made the top navigation bar centered Horizontaly and Vertically, we put the space between the logo and the links */
+
+
+.nav__link--list{
+    display: flex;
+
+}
+
+
+/* This makes the links side by side */
+
+.nav__link--anchor{
+    margin: 0 12px;
+    color: #242424;
+    font-weight: 700;
+}
+
+/* This adds space between the links in the nav, and makes it bold and blackish*/
+
+.nav__link--anchor-primary{
+    background-color: #6030b1;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+}
+/*
+This changes the color of the contact button, adds some padding to make it bigger, makes it a circular rectangle, and makes the text white */
+
+.nav__link--anchor-primary:hover{
+    background-color: #5d3eff;
+   transition: all 300ms ease;
+}
+/*
+This makes the contact button change color on hover, and adds a delay for beauty */
+
+
+.personal__logo{
+    font-size: 24px;
+    color: #6030b1;
+    margin: 0 12px;
+    font-weight: bold;
+}
+/*
+This makes my name look good, the margin is for smaller screens to make sure there is spacing on it */
+
+/*
+
+
+
+
+
+
+END OF NAVIGATION
+
+
+
+
+
+
+ */
+
+
+
+
+
+/*
+
+
+
+
+
+ About me
+
+
+
+
+
+  */
+
+
+#about-me{
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*
+This sets he height of the about me section which has 2 parts. the nav and the whole image + text. It arranges them in a column */
+
+
+
+.about-me__info--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* This organizes the image and text in a column  it sets a max width and centers the container it also makes the text center justified like microsoft word*/
+
+.about-me__picture--mask{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    margin-bottom: 28px;
+
+
+
+
+    animation: animate-profile-picture 800ms 200ms backwards
+}
+
+/*
+width: 100px;
+    height: 100px;
+
+    This is the figure the wraps the image. It is set at 100x100 however the image is larger than this area and takes up more space. We need to add the below code
+
+
+
+    .about-me__picture{
+    width: 100%;}
+
+
+
+
+    to make the image take up 100% of the space in the figure.
+
+
+    border-radius: 50%;
+    overflow: hidden;
+    Makes the image a circle
+The image must be a square resolution ex 720px x 720px
+
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .16);
+
+    adds a soft shadown 8px down 16px blur(spread), and rgba is the color black and the last number is kind of like opacity
+
+
+    margin-bottom: 28px;
+    add a bit ofspace under the photo*/
+
+
+.about-me__picture{
+    width: 100%;
+
+/*
+Improving my photo */
+
+transform: scale(1.2);
+padding-top: 0px;
+filter: brightness(110%);
+/*
+Zoom in 1.5x and push the photo down 8px */
+}
+
+
+.text--purple{
+    color:#6030b1
+}
+
+.about-me__info--para{
+    font-size: 20px;
+    margin-bottom: 28px;
+
+
+    animation: fade-up 650ms 600ms backwards;
+}
+
+.about-me__info--title{
+    margin-bottom: 16px;
+
+
+    animation: fade-up 650ms 400ms backwards;
+}
+
+/*
+This section is easy. Make the text purple for the spans we decided, make the paragraph font 20 and line height 1.5 already done with the p at the top of the page. some margins to space them out */
+
+
+.about-me__links{
+
+    margin-bottom: 20px;
+    animation: fade-up 650ms 800ms backwards;
+}
+
+.about-me__link{
+font-size: 20px;
+color: #242424;
+padding: 0 16px;
+
+
+
+}
+/*
+This part takes the indvidual icon link and increases their size, changes color, and adds left and right padding */
+
+
+.about-me__info{
+    display: flex;
+    flex-direction: column;
+}
+/*
+This df and fdc the about me container and the figure */
+
+.about-me__img--container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+/* This honestly doesnt change the look of the page. the flex makes the figure take the rest of the 100vh and the df and aic align it some way */
+
+.about-me__img{
+width: 100%;
+
+
+animation: fade-in 1200ms 800ms backwards;
+}
+
+/*
+This makes the image stay inside of its parent */
+
+
+/*
+
+
+
+
+
+END OF ABOUT ME
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
+START OF TECHNOLOGY STACK
+
+
+
+
+
+ */
+
+
+
+.language__img{
+    width: 100%;
+    max-width: 100px;
+    transition: all 300ms ease;
+}
+/*
+This makes each icon 100px wide and makes it take up 100% of its parent, the figure
+
+The transition is for the hover effects below to make it beautiful*/
+
+.language:hover .language__img{
+    filter: brightness(80%);
+    opacity: .86;
+    transform: scale(.9);
+}
+
+/* This makes it so that when you hover over the image it reduces brightness, opacity, and scales it down a bit.
+
+
+after putting the text below the icons we added .language:hover infront of this class and removed hover from language__img. This means when you hover over the whole language box which is the icon and text, make just the image do this animation
+*/
+
+
+.language__img--wrapper{
+
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 25px;
+}
+
+/*
+This makes the images centered in the wrapper and adds some padding so the second line isnt touching the first row*/
+
+.language{
+    width: 25%;
+
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+/*
+This makes the first child of the whole language list be 25%
+
+
+
+DIFFICULT
+The second part is for the text under the icons. Because .language is it's parent you need to df and jcc to center them
+
+position relative
+we make the parent position relative so it shows logicially in the order of the code. this only works in conjunction with bottom 0 below*/
+
+.language__list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+}
+/*
+This makes the icons next to eachother(dis play flex) wrap( so 4 on each line since they each take up 25%) 
+It makes them centered which they already are but for mobile view theres 3 on each line and 1 alone so it needs to be centered*/
+
+
+
+
+.language__name{
+position: absolute;
+bottom: 0;
+transform: scale(0);
+transition: all 300ms ease;
+}
+
+/* DIFFICULT
+position absolute makes everything go crazy. It makes it relative to the document, and not to the part where it is in the code. example would be a chat box that follows the corner of the page.
+
+bottom 0 puts it at the bottom of its containing block. by making the parent position relative, it's containing box is its parent so it goes to the bottom of that
+
+
+scale is like premiere pro. 0 scale means the object is so small it's invisible.
+
+transition makes it zoom into 100 scale nicely*/
+
+
+.language:hover .language__name{
+    transform: scale(1);
+}
+/*
+when you hover over the language box( which is more than just the icon) make the text scale 1 */
+
+
+
+/*
+
+
+
+
+
+END OF TECH STACK
+
+
+
+
+
+ */
+
+ /*
+
+
+
+
+
+START OF PROJECT LIST
+
+
+
+
+
+ */
+
+ .project__img{
+    width: 100%;
+    transition: all 500ms ease;
+ }
+
+ /* This makes images be 100% of their parent
+
+ this transition is for the image to scale up and blur*/
+
+ .project__wrapper{
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, .45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+
+ }
+
+/*
+ so apparently the image was coming outside of the project wrapper so we used df to fix it????? theres only one element in this class so idk but it was extending a bit towards the bottom, we fixed the width
+
+ Box shadow makes the shadow, border radius makes the image have a rounded edge and overflow hidden makes the rounding corners work
+
+
+ position relative is for the black box to cover it since it is position absolute
+
+
+ */
+
+ .project__wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: all 450ms ease;
+    z-index: 2;
+
+ }
+
+
+
+ /* difficult
+ This is for the dark effect on the image.
+
+ :before means put something before the element. example
+
+ https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_before
+
+ absolute position only works if you  use relative on the element(code below)
+
+ top left positions it. height and width makes it the full size of the container its in
+
+ opacity 0 means you cant see the black box
+
+ the transition is for the black box
+
+ the z index makes the black box ontop of it a guess idk i just work here
+ */
+
+ .project:hover  .project__wrapper:before {
+    opacity: .7;
+
+ }
+
+
+ /* when we hover over the project, which is the li item, change the opacity */
+
+
+.project:hover .project__img{
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+/*
+This means that when you hover over the project, which is the LI item, make the image scale up and blur. Transition applies to just the .project__img a few blocks up */
+
+
+.project__list{
+    padding-top: 40px;
+}
+/*
+This adds padding to the project list to separate it from the title a bit */
+
+
+/* This part up to here covers the project image and the black overlay with blur and scale effects. We are now going to do the text and links that appear on the black boxes */
+
+
+
+.project__description{
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translatey(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms ease, opacity 300ms ease
+
+}
+
+/* This makes the text show on the image, and positions it in the middle but not verticaly. Vertically it's at the bottom so we can do the upwards transition with the code just below
+
+z index 3 makes it appear over the black box
+
+opacity and transition means it's invisbale until hover code below */
+
+.project:hover .project__description{
+    opacity: 1;
+    transform: translatey(-50%);
+}
+/* 
+This makes the text move upward  */
+
+
+.project__description--title, .project__description--sub-title, .project__description--para, .project__description--link{
+text-align:left;
+color:white;
+}
+
+.project__description--title{
+    font-size: 40px;
+}
+
+.project__description--para{
+    padding: 16px 0;
+}
+
+.project__description--link{
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.project{
+    margin-bottom: 135px;
+}
+
+.project:last-child{
+    margin-bottom: 40px;
+}
+
+/* The above 2 code makes the projects spaced out to eachother, but the last one only has 40px so we can make it nice into the net section */
+
+/*
+
+
+
+
+
+END OF PROJECTS
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
+START OF FOOTER
+
+
+
+
+
+ */
+
+ footer{
+    background-color: #242424;
+ }
+
+ .footer__logo--img{
+    width:70px;
+    height: 70px;
+ }
+
+ /* make the logo small */
+
+ .footer__row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 0;
+
+ }
+/* 
+ This makes the footer centered and change height depending on screen size since padding is a perfent */
+
+ .footer__social--link, .footer__copyright{
+    color: white;
+ }
+
+
+
+ .footer__social--list{
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around
+ }
+
+ /* This makes the links (github, linked in e-mail resume) spaced out nicely and lowers the copyright */
+
+
+ .footer__logo--popper{
+    color:white;
+    position:absolute;
+    right: 0 ;
+    top: 30px;
+    font-weight: 700;
+    transition: all 350ms ease;
+    opacity: 0;
+ }
+
+
+/* 
+ The 'top up arrow' is taking up space in the footer and messing up the spacing. We use position absolute so it's not interfering and making it's parent position relative.
+ Right 0 moves it all the way to the right of it's parent  top moves is 30 px from the top
+
+ make the transistion smoother and make is 0 opacity
+ 
+ */
+
+ .footer__anchor{
+    position: relative;
+    margin-bottom: 20px;
+ }
+/* 
+ This margin is below the logo */
+
+ 
+
+ .footer__anchor:hover .footer__logo--popper{
+    transform: translateX(60px);
+    opacity: 1;
+     }
+/* 
+     This means that when you hover over the footer anchor which is the a for the logo, move the logo popper which is the span 60px right */
+
+
+     
+/*
+
+
+
+
+
+END OF FOOTER
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
+START OF MOBILE VIEW
+
+
+
+
+
+ */
+
+
+
+ @media(max-width:768px){
+    nav{
+        height: 68px;
+    }
+
+    /* reduce nav height */
+
+    h1{
+        font-size: 28px;
+    }
+/* 
+    reduce h1 text size */
+
+    .about-me__info--para{
+        font-size: 18px;
+    }
+
+    /* 
+    reduce about me text size */
+
+    .language{
+        width: calc(100%/3);
+    }
+/* 
+    Make technology icons only 3 per line */
+
+    .project__description--para{
+        font-size: 14px;
+    }
+
+     .project__description {
+        padding-right: 30px;
+        left: 60px;
+    }
+/* 
+    The text that appears when you hover on the projects looked like s$^* so we used padding and left to move it a bit to the left  */
+
+
+
+ }
+/* 
+ This is the closing } for the mobile view do not delete!!!! */
+
+
+ @media(max-width:480px){
+/* For absolutely tiny phones */
+
+
+.nav__link:not(:last-child){
+    display: none;
+}
+  /* This hides the language and projects from the nav */
+
+.project__description--para{
+    display: none;
+}
+
+/* This removes the paragraph from the project hover */
+
+
+.project__description--links{
+    display: flex;
+    justify-content: center
+
+ }
+
+ .project__description--sub-title{
+    text-align: center;
+    margin: 12px 0;
+ }
+
+ .project__description--title{
+    line-height: 1;
+    font-size: 32px;
+    text-align: center;
+ }
+
+ .project__description{
+    padding: 0;
+    left: 0%;
+    width: 100%;
+ }
+
+ /* This is a trick to center absolute position items. Make it left all the way, make the element 100% wide and then text align center */
+
+
+
+}
+ /* 
+ This is the closing } for the mobile view do not delete!!!! */
+
+ /*
+
+
+
+
+
+END OF Mobile View
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
+START OF ANIMATIONS
+
+
+
+
+
+ */
+
+ /* .about-me__picture--mask{
+    animation: animate-profile-picture 800ms 200ms backwards
+} */
+
+/* This is with the class in the code above but I am putting it here so it's easy to see. animation: whatever we called the animation 800ms is the duration of the effect 200ms is a delay, and backwards means that for the first 200ms do what the first keyframe says. in this case is stays hidden for 200ms */
+
+@keyframes animate-profile-picture {
+ 0% {
+    transform: scale(0);
+ }
+
+ 80% { 
+    transform: scale(1.1);
+ }
+
+ 100%{
+    transform: scale(1);
+ }
+} 
+
+/* Keyframes. First call the animation whatever you want, then specify a which percent of the animation you want something to happen. here we are starting from scale 0, scaling it to 1.1 and then back to 0 for a nice little pop effect  on my profile picture*/
+
+
+@keyframes fade-up{
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* This is for the fade effect on the follow classes. notice that the delays are different so each element comes up individually
+
+.about-me__info--title{
+    animation: fade-up 650ms 400ms backwards;
+}
+
+
+.about-me__info--para{
+    animation: fade-up 650ms 600ms backwards;
+}
+
+
+.about-me__links{
+    animation: fade-up 650ms 800ms backwards;
+}*/
+
+
+@keyframes fade-in{
+    0%{ 
+        opacity:0;
+
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* This is for the cartoon image to slowly fade in the class we targeted was .about-me__img */
+
+
+.wave{
+    display: inline-block;
+    animation: animate-wave 600ms infinite ease-in-out
+
+}
+
+/* 
+.wave is the span element. You cant rotate a span element because its its an inline element by default. switch it to inline block. 600ms is the duration, infinite means kep it going, and easein and out makes it look nicer */
+
+@keyframes animate-wave{
+0%{
+    transform: rotate(0);
+}
+50%{
+    transform: rotate(30deg);
+}
+100%{
+    transform: rotate(0);
+}
+}
+
+/* This animates the waving hand. starting at 0 degrees the rotate 30 deg */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
