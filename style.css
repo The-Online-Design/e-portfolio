@@ -212,9 +212,38 @@ This makes the contact button change color on hover, and adds a delay for beauty
     color: #6030b1;
     margin: 0 12px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 /*
 This makes my name look good, the margin is for smaller screens to make sure there is spacing on it */
+
+
+
+
+.nav__logo--wrapper{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+
+}
+
+.nav__logo--text{
+    color: black;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+img{
+    width: 100%;
+}
+
 
 /*
 
@@ -267,8 +296,9 @@ This sets he height of the about me section which has 2 parts. the nav and the w
     align-items: center;
     justify-content: center;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 28px auto;
     text-align: center;
+
 }
 
 /* This organizes the image and text in a column  it sets a max width and centers the container it also makes the text center justified like microsoft word*/
@@ -278,10 +308,7 @@ This sets he height of the about me section which has 2 parts. the nav and the w
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-    margin-bottom: 28px;
-
-
+    margin-bottom: 16px;
 
 
     animation: animate-profile-picture 800ms 200ms backwards
@@ -325,9 +352,9 @@ The image must be a square resolution ex 720px x 720px
 /*
 Improving my photo */
 
-transform: scale(1.2);
+
 padding-top: 0px;
-filter: brightness(110%);
+filter: brightness(100%);
 /*
 Zoom in 1.5x and push the photo down 8px */
 }
@@ -377,6 +404,8 @@ This part takes the indvidual icon link and increases their size, changes color,
 .about-me__info{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 /*
 This df and fdc the about me container and the figure */
@@ -385,12 +414,15 @@ This df and fdc the about me container and the figure */
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 80%;
 
 }
 
 /* This honestly doesnt change the look of the page. the flex makes the figure take the rest of the 100vh and the df and aic align it some way */
 
 .about-me__img{
+
 width: 100%;
 
 
@@ -465,7 +497,7 @@ padding: 25px;
 This makes the images centered in the wrapper and adds some padding so the second line isnt touching the first row*/
 
 .language{
-    width: 25%;
+    width: 40%;
 
 
     display: flex;
@@ -556,6 +588,10 @@ START OF PROJECT LIST
     width: 100%;
     transition: all 500ms ease;
  }
+ .project__img__final{
+    width: 80%;
+    transition: all 500ms ease;
+ }
 
  /* This makes images be 100% of their parent
 
@@ -570,6 +606,19 @@ START OF PROJECT LIST
 
 
  }
+ .project__wrapper__final{
+    display: flex;
+    flex-direction: column;
+ padding: 50px 0;
+    align-items: center;
+
+
+ }
+
+ .project__text__final{
+    margin-bottom: 40px;
+
+ }
 
 /*
  so apparently the image was coming outside of the project wrapper so we used df to fix it????? theres only one element in this class so idk but it was extending a bit towards the bottom, we fixed the width
@@ -582,7 +631,7 @@ START OF PROJECT LIST
 
  */
 
- .project__wrapper:before {
+ /* .project__wrapper:before {
     content: "";
     position: absolute;
     top: 0;
@@ -594,7 +643,7 @@ START OF PROJECT LIST
     transition: all 450ms ease;
     z-index: 2;
 
- }
+ } */
 
 
 
@@ -616,10 +665,10 @@ START OF PROJECT LIST
  the z index makes the black box ontop of it a guess idk i just work here
  */
 
- .project:hover  .project__wrapper:before {
+ /* .project:hover  .project__wrapper:before {
     opacity: .7;
 
- }
+ } */
 
 
  /* when we hover over the project, which is the li item, change the opacity */
@@ -627,7 +676,7 @@ START OF PROJECT LIST
 
 .project:hover .project__img{
     transform: scale(1.07);
-    filter: blur(5px);
+
 }
 
 /*
@@ -718,6 +767,71 @@ END OF PROJECTS
 
 
 
+START OF CONTACT US
+
+
+
+
+
+ */
+
+ 
+
+.contact__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 ;
+}
+
+
+.contact__button{
+    margin-top: 48px;
+    border: none;
+    background-color: #6030b1;
+    padding: 24px 56px;
+    border-radius: 50px;
+    color: white;
+    font-size: 24px;
+    box-shadow: grey 5px 5px 20px;
+    transition: all 300ms ease;
+
+}
+
+.contact__button:hover{
+    cursor: pointer;
+    background-color: #5d3eff;
+   transition: all 300ms ease;
+
+}
+.contact__button:active{
+    transform: translateY(3px);
+
+}
+
+
+/*
+
+
+
+
+
+
+
+
+END OF CONTACT US
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
 START OF FOOTER
 
 
@@ -726,6 +840,8 @@ START OF FOOTER
 
  */
 
+
+
  footer{
     background-color: #242424;
  }
@@ -733,6 +849,8 @@ START OF FOOTER
  .footer__logo--img{
     width:70px;
     height: 70px;
+    filter: grayscale(1);
+    filter: invert(1);
  }
 
  /* make the logo small */
@@ -742,7 +860,7 @@ START OF FOOTER
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8% 0;
+    padding: 5% 0;
 
  }
 /* 
@@ -757,7 +875,7 @@ START OF FOOTER
  .footer__social--list{
     margin-bottom: 28px;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     display: flex;
     justify-content: space-around
  }
@@ -786,7 +904,7 @@ START OF FOOTER
 
  .footer__anchor{
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
  }
 /* 
  This margin is below the logo */
@@ -801,7 +919,18 @@ START OF FOOTER
      This means that when you hover over the footer anchor which is the a for the logo, move the logo popper which is the span 60px right */
 
 
-     
+     .footer__legal{
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: center       ;
+        margin: 16px 0 16px;
+     }
+
+     .footer__legal--link{
+        color: white;
+        margin: 0 16px;
+     }
 /*
 
 
@@ -836,6 +965,21 @@ START OF MOBILE VIEW
         height: 68px;
     }
 
+    .nav__logo--text{
+        font-size: 14px;
+    }
+    .nav__logo--wrapper{
+        width:50px;
+    }
+
+    .about-me__picture--mask{
+
+    }
+
+    .about-me__picture{
+
+    }
+
     /* reduce nav height */
 
     h1{
@@ -852,7 +996,7 @@ START OF MOBILE VIEW
     reduce about me text size */
 
     .language{
-        width: calc(100%/3);
+        width: 40%;
     }
 /* 
     Make technology icons only 3 per line */
@@ -868,7 +1012,13 @@ START OF MOBILE VIEW
 /* 
     The text that appears when you hover on the projects looked like s$^* so we used padding and left to move it a bit to the left  */
 
+.footer__row{
+    padding: 8% 0;
+}
 
+.contact__button{
+    font-size: 18px;
+}
 
  }
 /* 
