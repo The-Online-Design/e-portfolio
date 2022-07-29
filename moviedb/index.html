@@ -40,9 +40,7 @@
             <ul>
               <li><a href="../" class="nav__link link__hover-effect">Back to portfolio</a></li>
               <li>
-                <a href="#movies" class="nav__link link__hover-effect"
-                  >Movies</a
-                >
+
               </li>
               <li onclick="toggleModal()" class="nav__link--btn"> Contact</a></li>
             </ul>
@@ -63,7 +61,7 @@
           </button>
           <ul class="menu__links">
             <li class="menu__list"><a href="../" class="menu__link" onclick="closeMenu()">Back to portfolio</a></li>
-            <li class="menu__list"><a href="#movies" class="menu__link" onclick="closeMenu()">Movies</a></li>
+
             <li class="menu__list"><a href="#" class="menu__link no-cursor" onclick="closeMenu(); toggleModal()">Contact</a></li>
           </ul>
         </div>
@@ -215,9 +213,8 @@ close menu also needs to go on the a links-->
             </div>
         </a>
         <div class="footer__list">
-          <a href="" class="footer__link cursor-exception link__hover-effect">Return to portfolio</a>
-          <a href="#features" class="footer__link cursor-exception link__hover-effect">Books</a>
-          <a href="" class="footer__link no-cursor link__hover-effect">Contact</a>
+          <a href="../" class="footer__link cursor-exception link__hover-effect">Back to portfolio</a>
+          <a href="#" onclick="toggleModal()" class="footer__link no-cursor link__hover-effect">Contact</a>
         </div>
         <div class="footer__copyright"> <div class="credit--container">
           <p class="credit--text">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>

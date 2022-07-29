@@ -362,7 +362,8 @@ Zoom in 1.5x and push the photo down 8px */
 
 
 .text--purple{
-    color:#6030b1
+    color:#6030b1;
+    font-weight: bold;
 }
 
 .about-me__info--para{
@@ -1038,15 +1039,16 @@ START OF EMAIL ME JS
 
 
 .modal__title{
-    font-size: 26px;
+    font-size: 32px;
 }
 
 .modal__sub-title{
     margin: 12px 0 24px 0;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .modal__para{
+    font-size: 18px;
     margin-bottom: 12px;
     line-height: 1.75;
 }
@@ -1112,7 +1114,7 @@ START OF EMAIL ME JS
 }
 
 label{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 
 }

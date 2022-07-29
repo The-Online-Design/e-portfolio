@@ -67,7 +67,7 @@ ul{
     background-position: 50%;
     background-size: cover;
     background-attachment: fixed;
-    position: relative;
+
 }
 
 nav{
@@ -107,6 +107,7 @@ align-items: center;
     border-radius: 99px;
     background-color: white;
     transition: all 350ms ease;
+    cursor: pointer;
 }
 .nav__link--btn:hover{
     color: white;
@@ -469,7 +470,7 @@ input:active, input:focus{
 /* MODAL CONTACT POPUP */
 .modal{
     position: absolute;
-    top: 100%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -780,6 +781,9 @@ nav, .header, .mail__btn{
 
 
 @media (max-width: 768px){
+    .modal__about{
+        display: none;
+    }
     .modal{
         top: 0;
         left: 0;
