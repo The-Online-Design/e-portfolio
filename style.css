@@ -65,6 +65,7 @@ flex: 1;
 
 .flex{
     display: flex;
+    padding: 0 20px;
 }
 
 /* Idk he said that the child will also take up the full height */
