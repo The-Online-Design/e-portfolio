@@ -195,6 +195,7 @@ nav{
     padding: 8px 20px;
     border-radius: 50px;
     color: white;
+    cursor: pointer;
 }
 /*
 This changes the color of the contact button, adds some padding to make it bigger, makes it a circular rectangle, and makes the text white */
@@ -675,7 +676,7 @@ START OF PROJECT LIST
 
 
 .project:hover .project__img{
-    transform: scale(1.07);
+    transform: scale(1.05);
 
 }
 
@@ -748,6 +749,12 @@ color:white;
 
 /* The above 2 code makes the projects spaced out to eachother, but the last one only has 40px so we can make it nice into the net section */
 
+
+.project__title{
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: 28px;
+}
 /*
 
 
@@ -781,7 +788,7 @@ START OF CONTACT US
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0 ;
+    padding: 150px 0 ;
 }
 
 
@@ -950,6 +957,352 @@ END OF FOOTER
 
 
 
+START OF EMAIL ME JS
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+ 
+
+/* MODAL CONTACT POPUP */
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow .5s ease;
+
+}
+
+.modal__half{
+    width: 50%;
+    padding: 40px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transition: all 300ms ease-in;
+
+}
+
+
+.modal__open .modal__about{
+    transform: translateX(0);
+
+}
+.modal__about{
+    background-color: rgb(245, 245, 245);
+    transform: translateX(-110%);
+
+}
+
+.modal__open .modal__contact{
+    transform: translateX(0);
+
+}
+
+.modal__contact{
+    background-color:#242424;
+    color: white;
+
+    transform: translateX(110%);
+
+}
+
+/* We are animating the slide in modal half */
+
+
+
+.modal__title--about{
+    margin-bottom: 24px;
+}
+
+
+.modal__title{
+    font-size: 26px;
+}
+
+.modal__sub-title{
+    margin: 12px 0 24px 0;
+    font-size: 14px;
+}
+
+.modal__para{
+    margin-bottom: 12px;
+    line-height: 1.75;
+}
+
+
+.language__list{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.language{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    position: relative;
+
+
+}
+
+.language:hover .language__name{
+    transform: scale(1);
+}
+.language:hover .language__img--wrapper{
+    transform: scale(1);
+    filter: brightness(.9);
+}
+
+.language__name{
+    position: absolute;
+    bottom: -10px;
+    transform: scale(0);
+    transition: all 300ms ease;
+}
+
+.language__img{
+    width: 100%;
+}
+.language__img--wrapper{
+    padding: 24px;
+    transition: all 300ms ease;
+}
+
+/* This part was for the modal general size, color, and about me section. Below we are starting the contact form */
+
+.modal__title--contact{
+    color: white;
+}
+.modal__sub-title--contact{
+    color: white;
+}
+.input, textarea{
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    outline: none;
+    border: 2px solid #c0c4cc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 40px;
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.form__item{
+    margin-bottom: 20px;
+
+}
+
+textarea{
+    resize: vertical;
+    margin-top: 8px;
+}
+
+.form__submit{
+    background-color: #f06449;
+    color: white;
+    border: 2px solid #f06449;
+    font-weight: bold;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 20px;
+}
+
+.form__submit:hover{
+    border-color:white;
+    background-color: transparent;
+
+}
+
+.form__submit:active{
+
+    transform: translateY(3px);
+}
+
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+
+}
+
+input:focus, textarea:focus{
+    border-color: #f06449;
+}
+
+/* 
+End of contact form styling, start of success/fail state */
+
+
+.modal__overlay{
+    position: absolute;
+    /* parent is modal half */
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal__overlay--loading{
+    background-color: #242424;
+
+    font-size: 80px;
+    z-index: -1;
+}
+/* loading screen */
+
+.fa-spinner{
+animation: spinner 750ms infinite linear
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* Animate spinning loading */
+
+.modal__overlay--success{
+background-color: #4bb543;
+font-size: 40px;
+font-weight: 700;
+text-align: center;
+padding: 28px;
+z-index: -1;
+}
+
+/* Success Screen */
+
+.modal__overlay--fail{
+background-color: rgb(215, 0, 0);
+font-size: 16px;
+font-weight: 700;
+text-align: center;
+padding: 28px;
+z-index: -1;
+color: black;
+}
+
+.fail__email{
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.fail__email:hover{
+color: white;
+border-color: white;
+}
+
+
+/* fail Screen */
+
+.modal__exit{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
+}
+
+/* Exit button */
+
+
+.modal__overlay--visible{
+    z-index: 1;
+    display: flex;
+}
+
+/* This is for the JS. Add this class to the appropriate screen making it visible */
+
+
+
+
+
+
+
+/* End of contact form set up.*/
+
+
+.modal__open .modal{ 
+    z-index: 2;
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .55);
+    visibility: visible;
+    transition: box-shadow 500ms ease;
+}
+
+/* This is for the modal appearing when js adds the modal__open class to the body */
+
+
+nav, .header, .mail__btn{
+    opacity: 1;
+    visibility: visible;
+    transition:  opacity 600ms 400ms visibility 600ms 400ms;
+}
+.modal__open nav,.modal__open .header, .modal__open .mail__btn{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms 200ms;
+}
+
+/* This makes the elements behind the modal disappear */
+
+
+ /*
+
+
+
+
+
+END OF EMAIL ME JS
+
+
+
+
+
+ */
+ /*
+
+
+
+
+
 START OF MOBILE VIEW
 
 
@@ -961,6 +1314,36 @@ START OF MOBILE VIEW
 
 
  @media(max-width:768px){
+    .language{
+        margin-bottom: 24px;
+    }
+    .nav__logo--text{
+        padding-left: 8px;
+    }
+
+    .nav__logo--wrapper{
+        transform: scale(.8);
+    }
+    .modal__about{
+        display: none;
+    }
+    .modal{
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+    
+    .modal__half{
+        width: 100%;
+    }
+    .language__img--wrapper{
+        padding: 8px;
+    }
+
     nav{
         height: 68px;
     }
@@ -972,13 +1355,6 @@ START OF MOBILE VIEW
         width:50px;
     }
 
-    .about-me__picture--mask{
-
-    }
-
-    .about-me__picture{
-
-    }
 
     /* reduce nav height */
 

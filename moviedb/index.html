@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/f3191dfe5c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init("08o0h8_F-efYPg4Xp");
+  })();
+</script>
+
+  </head>
+  <body>
+    <noscript
+      ><strong
+        >We're sorry but webapp doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      ></noscript
+    >
+
+    <section id="landing">
+      <div class="row">
+        <nav>
+          <div class="nav__logo--wrapper">
+            <i class="fa-solid fa-ticket"></i>
+            <p class="nav__logo--text">Movies Database</p>
+          </div>
+          <div class="nav__links">
+            <ul>
+              <li><a href="../" class="nav__link link__hover-effect">Back to portfolio</a></li>
+              <li>
+                <a href="#movies" class="nav__link link__hover-effect"
+                  >Movies</a
+                >
+              </li>
+              <li onclick="toggleModal()" class="nav__link--btn"> Contact</a></li>
+            </ul>
+
+
+
+
+          </div>
+          
+            
+            <!-- this section is for the mobile sidebar menu -->
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list"><a href="../" class="menu__link" onclick="closeMenu()">Back to portfolio</a></li>
+            <li class="menu__list"><a href="#movies" class="menu__link" onclick="closeMenu()">Movies</a></li>
+            <li class="menu__list"><a href="#" class="menu__link no-cursor" onclick="closeMenu(); toggleModal()">Contact</a></li>
+          </ul>
+        </div>
+<!-- this section is for the mobile sidebar menu 
+close menu also needs to go on the a links-->
+        </nav>
+        <div class="landing__main">
+          <h1 class="landing__header">Search for movies</h1>
+          <div class="landing__search">
+            <input
+            class="header__search"
+              type="text"
+              name="search"
+              placeholder="Search over 780,000 movies"
+              onchange="onSearchChange(event)"
+            />
+            <i class="fa-solid fa-magnifying-glass" onclick="onSearchChange(event)" ></i>
+          </div>
+        </div>
+        <div class="bg--overlay"></div>
+      </div>
+
+      </div>
+
+
+<!-- This is the modal -->
+
+<div class="modal">
+  <div class="modal__half modal__about">
+      <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+      <h4 class="modal__sub-title modal__sub-title--about">Anthony M</h4>
+      <p class="modal__para">I'm a Canadian <span class="orange">Frontend software engineer</span> with a strong passion for developing websites with great <span class="orange"> user experiences</span>
+      <br>
+      I currently work with businesses to develop <span class="orange">affordable, responsive</span> websites that look great on <span class="orange">any device</span> </p>
+      <div class="language__list">
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" class="language__img" alt="">
+            </figure>
+            <span class="language__name">HTML5</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" class="language__img" alt="">
+            </figure>
+            <span class="language__name">CSS3</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" class="language__img" alt="">
+            </figure>
+            <span class="language__name">Javascript</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="./assets/Visual_Studio_Code_1.35_icon.svg.png" class="language__img" alt="">
+            </figure>
+            <span class="language__name">Visual Studio</span>
+          </div>
+        </div>
+
+  </div>
+
+
+  <!-- This is the contact form half -->
+  <div class="modal__half modal__contact">
+      <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+      <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+      <h4 class="modal__sub-title modal__sib-title--contact">
+          I'm currently accepting new opportunities.
+      </h4>
+      <form onsubmit="contact(event)"  id="contact__form">
+          <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input type="text" name="user_name" class="input .contact__input" required/>
+          </div>
+          <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input type="email" name="user_email" class="input .contact__input" required/>
+          </div>
+          <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea type="text" name="message" class="input .contact__input" required></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">Send it my way</button>
+      </form>
+
+<!-- This is the success/fail state of sending an email -->
+      <div class="modal__overlay modal__overlay--loading">
+          <i class="fas fa-spinner"></i>
+      </div>
+      <div class="modal__overlay modal__overlay--success">
+          Your message sent successfully! Looking forward to speaking to you soon.
+      </div>
+      <div class="modal__overlay modal__overlay--fail">
+         <p> Oh no :( The e-mail service is temporaily unavilable. Please contact <a class="fail__email" href="mailto:info@theonlinedesign.ca?subject=Website Development"> info@theonlinedesign.ca</a> directly. I apologize for this inconvenience.
+         </p>
+      </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <main>
+        <section id="movies">
+            <div class="row">
+              <div class="spinner">
+                <i class="fa-solid fa-spinner"></i>
+              </div>
+              <div class="search__text">Latest Movies:</div>
+                <div class="movies">
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+
+<section id="credit">
+  <div class="row">
+    
+  </div>
+</section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row row__column">
+          <a href="#" class="cursor-exception">
+            <div class="footer__logo--wrapper">
+              <i class="fa-solid fa-ticket"></i>
+              <p class="footer__logo--text">Movies DB</p>
+            </div>
+        </a>
+        <div class="footer__list">
+          <a href="" class="footer__link cursor-exception link__hover-effect">Return to portfolio</a>
+          <a href="#features" class="footer__link cursor-exception link__hover-effect">Books</a>
+          <a href="" class="footer__link no-cursor link__hover-effect">Contact</a>
+        </div>
+        <div class="footer__copyright"> <div class="credit--container">
+          <p class="credit--text">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+          <a href="https://www.themoviedb.org/" target="_blank"><figure class="credit--logo--wrapper">
+            <img src="./assets/logo.svg" alt="">
+          </figure>
+        </a>
+        </div></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

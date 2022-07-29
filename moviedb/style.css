@@ -1,0 +1,923 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+li{
+    list-style-type: none;
+}
+
+img{
+    width: 100%;
+}
+
+.row{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+	padding: 0 30px;
+    position: relative;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+}
+
+button:active{
+    transform: translateY(1px);
+}
+
+p{
+    line-height: 1.5;
+	font-size: 16px;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+}
+
+/* The code below can be edited */
+
+#landing{
+    background-image: url(./assets/movie.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.fa-ticket{
+    font-size: 42px;
+    color: gold;
+}
+
+.nav__logo--wrapper{
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.nav__logo--text{
+    padding-left: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav__link{
+    color: white;
+    margin: 0 24px;
+}
+.nav__link--btn{
+    color: #6030b1;
+    margin: 0 0 0 24px;
+    padding: 12px 40px;
+    border-radius: 99px;
+    background-color: white;
+    transition: all 350ms ease;
+}
+.nav__link--btn:hover{
+    color: white;
+    background-color: #6030b1;
+
+
+}
+
+.link__hover-effect{
+    position: relative;
+}
+
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    background-color: white;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after{
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.landing__main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+justify-content: center;
+}
+
+.landing__header{
+    color: white;
+    font-size: 46px;
+    margin: 40px 0;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.landing__search{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 16px 16px 16px 40px;
+    margin-bottom: 80px;
+    color: #6030b1;
+    border-radius: 50px;
+}
+
+.header__search{
+    border: none;
+    width: 100%;
+    font-size: 24px;
+
+}
+
+input:active, input:focus{
+    outline: none;
+}
+
+
+::placeholder{
+    color: rgba(0, 0, 0, .4);
+}
+
+.fa-magnifying-glass{
+    font-size: 36px;
+
+}
+
+
+
+
+
+
+
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 96px;
+}
+
+
+.movie{
+
+    width: 33%;
+    padding: 16px 24px;
+    border-radius: 10px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+.movie__title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.movie__text{
+    font-size: 12px;
+}
+
+.movie__year{
+    font-weight: bold;
+}
+
+.movie__genre{
+    margin: 16px 0;
+}
+
+.movie__img--wrapper{
+    display: flex;
+    width: 100%;
+    transition: all 300ms ease;
+}
+.movie__info{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+
+
+}
+.movie:hover .movie__img--wrapper{
+    transform: scale(1.05);
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Search*/
+
+#search{
+    padding: 40px 20px;
+}
+.search__filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.search__text{
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 48px 0 32px 0;
+}
+
+.search__price{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.purple{
+    color: #6030b1;
+}
+
+
+
+  h2{
+    font-size: 22px;
+  }
+
+
+
+.credit--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credit--logo--wrapper{
+    width: 100px;
+}
+
+.credit--text{
+    font-size: 12px;
+    margin-right: 24px;
+}
+
+
+
+
+
+  footer{
+    background-color: #242424;
+
+}
+.container{
+    padding: 56px 0;
+}
+.row__column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo--img{
+    width: 160px;
+    filter: grayscale(1)  invert(1);
+}
+
+.footer__logo--wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__link, .footer__copyright, .footer__logo--text{
+    color: white;
+    text-align: center;
+
+}
+
+
+.footer__list{
+    margin: 32px 0 32px 0;
+}
+
+.footer__link{
+    margin: 0 16px;
+
+}
+
+.footer__logo--wrapper .fa-ticket{
+    color: white;
+    padding-right: 16px;
+}
+
+
+
+
+
+
+
+.loading .spinner{
+    display: flex;
+}
+
+.loading .movies{
+    display: none;
+}
+
+.loading .search__text{
+    display: none;
+}
+
+
+.spinner{
+    width: 100%;
+    margin: 100px 0 300px 0;
+    display: none;
+    justify-content: center;
+
+}
+
+.fa-spinner{
+    font-size: 64px;
+    color: #6030b1;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MODAL CONTACT POPUP */
+.modal{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow .5s ease;
+
+}
+
+.modal__half{
+    width: 50%;
+    padding: 40px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transition: all 300ms ease-in;
+
+}
+
+
+.modal__open .modal__about{
+    transform: translateX(0);
+
+}
+.modal__about{
+    background-color: rgb(245, 245, 245);
+    transform: translateX(-110%);
+
+}
+
+.modal__open .modal__contact{
+    transform: translateX(0);
+
+}
+
+.modal__contact{
+    background-color:#242424;
+    color: white;
+
+    transform: translateX(110%);
+
+}
+
+/* We are animating the slide in modal half */
+
+
+
+
+
+
+.modal__title{
+    font-size: 26px;
+}
+
+.modal__sub-title{
+    margin: 12px 0 24px 0;
+    font-size: 14px;
+}
+
+.modal__para{
+    margin-bottom: 12px;
+    line-height: 1.75;
+}
+
+
+.language__list{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.language{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    position: relative;
+
+
+}
+
+.language:hover .language__name{
+    transform: scale(1);
+}
+.language:hover .language__img--wrapper{
+    transform: scale(.9);
+    filter: brightness(.9);
+}
+
+.language__name{
+    position: absolute;
+    bottom: -10px;
+    transform: scale(0);
+    transition: all 300ms ease;
+}
+
+.language__img{
+    width: 100%;
+}
+.language__img--wrapper{
+    padding: 24px;
+    transition: all 300ms ease;
+}
+
+/* This part was for the modal general size, color, and about me section. Below we are starting the contact form */
+
+
+.input, textarea{
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    outline: none;
+    border: 2px solid #c0c4cc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 40px;
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.form__item{
+    margin-bottom: 20px;
+
+}
+
+textarea{
+    resize: vertical;
+    margin-top: 8px;
+}
+
+.form__submit{
+    background-color: #f06449;
+    color: white;
+    border: 2px solid #f06449;
+    font-weight: bold;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 24px;
+    font-size: 20px;
+}
+
+.form__submit:hover{
+    border-color:white;
+    background-color: transparent;
+
+}
+
+.form__submit:active{
+
+    transform: translateY(3px);
+}
+
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+
+}
+
+input:focus, textarea:focus{
+    border-color: #f06449;
+}
+
+/* 
+End of contact form styling, start of success/fail state */
+
+
+.modal__overlay{
+    position: absolute;
+    /* parent is modal half */
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal__overlay--loading{
+    background-color: #242424;
+
+    font-size: 80px;
+    z-index: -1;
+}
+/* loading screen */
+
+.fa-spinner{
+animation: spinner 750ms infinite linear
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* Animate spinning loading */
+
+.modal__overlay--success{
+background-color: #4bb543;
+font-size: 40px;
+font-weight: 700;
+text-align: center;
+padding: 28px;
+z-index: -1;
+}
+
+/* Success Screen */
+
+.modal__overlay--fail{
+background-color: rgb(215, 0, 0);
+font-size: 16px;
+font-weight: 700;
+text-align: center;
+padding: 28px;
+z-index: -1;
+color: black;
+}
+
+.fail__email{
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.fail__email:hover{
+color: white;
+border-color: white;
+}
+
+
+/* fail Screen */
+
+.modal__exit{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
+}
+
+/* Exit button */
+
+
+.modal__overlay--visible{
+    z-index: 1;
+    display: flex;
+}
+
+/* This is for the JS. Add this class to the appropriate screen making it visible */
+
+
+
+
+
+
+
+/* End of contact form set up.*/
+
+
+.modal__open .modal{ 
+    z-index: 2;
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, .55);
+    visibility: visible;
+    transition: box-shadow 500ms ease;
+}
+
+/* This is for the modal appearing when js adds the modal__open class to the body */
+
+
+nav, .header, .mail__btn{
+    opacity: 1;
+    visibility: visible;
+    transition:  opacity 600ms 400ms visibility 600ms 400ms;
+}
+.modal__open nav,.modal__open .header, .modal__open .mail__btn{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms 200ms;
+}
+
+/* This makes the elements behind the modal disappear */
+
+
+
+.btn__menu{
+    display: none;
+}
+.menu__backdrop{
+    display: none;
+}
+
+
+
+
+@media (max-width: 768px){
+    .modal{
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+    
+    .modal__half{
+        width: 100%;
+    }
+    .language__img--wrapper{
+        padding: 8px;
+    }
+
+.nav__logo--text, .nav__links{
+    display: none;
+}
+
+.landing__header{
+    font-size: 32px;
+}
+
+.header__search{
+    font-size: 14px;
+}
+
+.fa-magnifying-glass{
+    padding-left: 8px;
+    font-size: 24px;
+}
+
+.landing__search{
+    padding: 16px;
+}
+
+.movie{
+    width: 100%;
+}
+
+
+
+
+
+
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: white;
+    display: flex;
+}
+
+/* This is for the burger and close icons, background color transparent is default so idk why we used it yet
+
+font size changes the size of the icons
+tac makes them centeres, no border removes the ugly button borders and color... well... changes the color of the icon 
+
+display none hides it until the screen size is small*/
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #242424;
+height: 100vh;
+width: calc(100vw);
+top: 0;
+left: 0px;
+
+    z-index: 3;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 300ms ease;
+}
+
+/* This is for the menu we ust T L B R 0 to make take up the full view and z index to make sure it's on top 
+
+you cant animate a display none so we do opacity 0 and visibility hidden to hide it*/
+
+.btn__menu--close{
+    position: absolute;
+    right: 20px;
+    top:10px;
+    padding: 8px;
+    color: white;
+}
+/* 
+This is from trial and error */
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 
+This centers the links in the middle of the backdrop */
+
+.menu__link{
+    font-size: 40px;
+    color: white;
+
+}
+
+.menu__list{
+    padding: 32px 0;
+}
+/* 
+link padding, color, and font size changes */
+
+/* 
+We need javascript to make it work */
+
+
+.menu--open .menu__backdrop{
+    visibility: visible;
+    opacity: 1;
+
+}
+/* 
+This is the kicker, when menu--open is added, go to menu__backdrop and set it visiable with full opacity  */
+
+.menu--open{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+/* 
+stop scrolling when menu is open */
+
+
+}

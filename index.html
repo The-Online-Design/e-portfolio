@@ -11,6 +11,15 @@
       src="https://kit.fontawesome.com/f3191dfe5c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+     emailjs.init("08o0h8_F-efYPg4Xp");
+  })();
+</script>
   </head>
   <body>
     <section id="about-me">
@@ -36,8 +45,8 @@
               >Projects</a
             >
           </li>
-          <li class="nav__link">
-            <a href="mailto:info@theonlinedesign.ca?subject=Website Quote from The Online Design" class="nav__link--anchor nav__link--anchor-primary"
+          <li class="nav__link" onclick="toggleModal()">
+            <a class="nav__link--anchor nav__link--anchor-primary"
               >Contact</a
             >
           </li>
@@ -55,10 +64,10 @@
             </h1>
             <p class="about-me__info--para">
               I'm a
-              <strong class="text--purple">frontend software engineer </strong
+              <strong class="text--purple">Front End Web Developer </strong
               >with a strong passion for building responsive web
               applications with great user experiences that positively impact
-              the world.
+              your business.
             </p>
             <!-- <div class="about-me__links">
               <a href="" class="about-me__link"
@@ -84,6 +93,131 @@
           </figure>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is the email.js modal -->
+
+      <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+            <p class="modal__para">I'm a <span class="orange">Front End Web Developer</span> with a strong passion for developing websites with great <span class="orange"> user experiences</span>
+            <br>
+            I currently work with businesses to develop <span class="orange">affordable, responsive</span> websites that look great on <span class="orange">any device</span> </p>
+            <div class="language__list">
+                <div class="language">
+                  <figure class="language__img--wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" class="language__img" alt="">
+                  </figure>
+                  <span class="language__name">HTML5</span>
+                </div>
+                <div class="language">
+                  <figure class="language__img--wrapper">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" class="language__img" alt="">
+                  </figure>
+                  <span class="language__name">CSS3</span>
+                </div>
+                <div class="language">
+                  <figure class="language__img--wrapper">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" class="language__img" alt="">
+                  </figure>
+                  <span class="language__name">Javascript</span>
+                </div>
+                <div class="language">
+                  <figure class="language__img--wrapper">
+                    <img src="./assets/Visual_Studio_Code_1.35_icon.svg.png" class="language__img" alt="">
+                  </figure>
+                  <span class="language__name">Visual Studio</span>
+                </div>
+              </div>
+      
+        </div>
+      
+      
+        <!-- This is the contact form half -->
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+            <h4 class="modal__sub-title modal__sub-title--contact">
+                I'm currently accepting new opportunities.
+            </h4>
+            <form onsubmit="contact(event)"  id="contact__form">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input type="text" name="user_name" class="input .contact__input" required/>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input type="email" name="user_email" class="input .contact__input" required/>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea type="text" name="message" class="input .contact__input" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">Send it my way</button>
+            </form>
+      
+      <!-- This is the success/fail state of sending an email -->
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Your message sent successfully! Looking forward to speaking to you soon.
+            </div>
+            <div class="modal__overlay modal__overlay--fail">
+               <p> Oh no :( The e-mail service is temporaily unavilable. Please contact <a class="fail__email" href="mailto:info@theonlinedesign.ca?subject=Website Development"> info@theonlinedesign.ca</a> directly. I apologize for this inconvenience.
+               </p>
+            </div>
+      
+      
+        </div>
+      
+      </div>
+
+<!-- This is the email.js modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </section>
 
     <section id="languages">
@@ -145,7 +279,17 @@
           </h1>
           <ul class="project__list">
             <li class="project">
-              <a href="./ecommerce/" target="_blank">
+              <h2 class="project__title text--purple">Movie Database</h2>
+              <a href="./moviedb/index.html" target="_blank">
+                <div class="project__wrapper">
+                <img src="./assets/moviedb.PNG" class="project__img" alt="" />
+               
+              </div>
+            </a>
+            </li>
+            <li class="project">
+              <h2 class="project__title text--purple">E-commerce</h2>
+              <a href="./ecommerce/index.html" target="_blank">
                 <div class="project__wrapper">
                 <img src="./assets/Ecommerce Project.png" class="project__img" alt="" />
                
@@ -153,6 +297,7 @@
             </a>
             </li>
             <li class="project">
+              <h2 class="project__title text--purple">Large Website Project</h2>
               <a href="./treact/" target="_blank">
                 <div class="project__wrapper">
                 <img src="./assets/t-react.png" class="project__img" alt="" />
@@ -178,9 +323,9 @@
             <section class="cta">
               <div class="row">
                 <div class="contact__container">
-                  <h1>Learn how we can<span class="text--purple"> help you</span></h1>
-                  <a href="mailto:info@theonlinedesign.ca?subject=Website Quote from The Online Design">
-                  <button class="contact__button btn">Send us an e-mail</button> </a>
+                  <h1>Learn how I can<span class="text--purple"> help you</span></h1>
+                  <a href="#about-me" onclick="toggleModal()">
+                  <button class="contact__button btn">Send an email</button> </a>
                 </div>
               </div>
             </section>
@@ -199,9 +344,9 @@
                     Top <i class="fas fa-arrow-up"></i>
                 </span>
             </a>
-            <div class="footer__social--list"><a href="https://github.com/The-Online-Design" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">Github</a>
-              <a href="https://www.linkedin.com/in/anthony-m-a8852423b/" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">Linked In</a>
-              <a href="mailto:info@theonlinedesign.ca?subject=Website Quote from The Online Design" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">Email</a>
+            <div class="footer__social--list">
+
+              <a href="#about-me" onclick="toggleModal()" class="footer__social--link link__hover-effect link__hover-effect--white">Contact</a>
   
               </div>
               <div class="footer__legal">
